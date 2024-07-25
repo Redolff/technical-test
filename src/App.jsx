@@ -15,16 +15,17 @@ export const App = () => {
             <h1> Fact - Prueba tecnica </h1>
             <button onClick={handleClick}> Get new fact </button>
             { fact 
-                ? <p> {fact} </p>
+                ? <h3> {fact} </h3>
                 : <p> {error} </p>
             }
-            {imageUrl &&
-                <img 
-                    src={imageUrl} 
-                    alt="imagen de un gato saludando" 
-                    width={300}
-                    height={300}
-                />
+            {imageUrl 
+                ?   <img 
+                        src={imageUrl} 
+                        alt="imagen de un gato saludando" 
+                        width={300}
+                        height={300}
+                    />
+                : <p> {error} </p>
             }
         </main>
     )

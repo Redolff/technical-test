@@ -12,7 +12,3 @@ gato con la primera palabra del hecho recuperado usando la segunda API
 
 - Crear un boton para reutilizar la logica
 - Crear hooks para extraer la logica
-
-¿Que mas hacer?
-- Handling de errores
-- Testing

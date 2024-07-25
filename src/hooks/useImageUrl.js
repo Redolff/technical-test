@@ -6,12 +6,12 @@ export const useImageUrl = ({ fact }) => {
     const [ error, setError ] = useState()
 
     useEffect(() => {
-
         const getImgUrl = async() => {
-            if(!fact) {
+            if(fact === '') {
                 setError('Fact is not valid')
                 return;
             }
+
             try{
                 const firstWord = fact.split(' ')[0] // Primera palabra del Hecho aleatorio
                 const response = await fetch(`${CAT_IMAGE_URL}/${firstWord}`)
@@ -24,13 +24,11 @@ export const useImageUrl = ({ fact }) => {
                 setImageUrl(url)
                 setError(null)  
             }
-            catch(error){
-                console.log(error)
-                setError(error.message)
+            catch(e){
+                setError('Error fetching the image url')
             }
         }
         getImgUrl()
-
     }, [fact])
 
     return { imageUrl, error }
